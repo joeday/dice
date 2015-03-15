@@ -1,9 +1,7 @@
 
-function getNum(highNum) {
-  if (!highNum) {
-    highNum = 6;
-  }
-  var num = Math.floor((Math.random() * highNum) +1)
+function getNum() {
+
+  var num = Math.floor((Math.random() * 6) +1)
   
   var el1 = document.getElementById("one");
   var el2 = document.getElementById("two");
@@ -13,10 +11,6 @@ function getNum(highNum) {
   var el6 = document.getElementById("six");
   var el7 = document.getElementById("seven");
 
-  
-  // el.innerHTML = parseInt(num);
-  // el.style.color = rgb;
-  
   if (num === 6) {
     el1.style.background = getRGB();
     el2.style.background = getRGB();
