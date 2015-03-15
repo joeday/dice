@@ -80,8 +80,4 @@ document.body.onkeyup = function(e){
     }
 }
 
-document.body.onclick = function() {
-  rollDice();
-}
-
 rollDice();
