@@ -1,5 +1,5 @@
 
-function getNum() {
+function rollDice() {
 
   var num = Math.floor((Math.random() * 6) +1)
   
@@ -76,8 +76,12 @@ function getRGB() {
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
-      getNum();
+      rollDice();
     }
 }
 
-getNum();
+document.body.onclick = function() {
+  rollDice();
+}
+
+rollDice();
