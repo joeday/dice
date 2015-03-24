@@ -10,55 +10,60 @@ function rollDice() {
   var el5 = document.getElementById("five");
   var el6 = document.getElementById("six");
   var el7 = document.getElementById("seven");
+  var die = document.getElementById("dieBG");
+  var rgb = getRGB();
+  var white = "#fff";
+
+  die.style.background = rgb;
 
   if (num === 6) {
-    el1.style.background = getRGB();
-    el2.style.background = getRGB();
-    el3.style.background = getRGB();
-    el4.style.background = "rgb(255,255,255)";
-    el5.style.background = getRGB();
-    el6.style.background = getRGB();
-    el7.style.background = getRGB();
+    el1.style.background = white;
+    el2.style.background = white;
+    el3.style.background = white;
+    el4.style.background = rgb;
+    el5.style.background = white;
+    el6.style.background = white;
+    el7.style.background = white;
   } else if (num == 5) {
-    el1.style.background = getRGB();
-    el2.style.background = "rgb(255,255,255)";
-    el3.style.background = getRGB();
-    el4.style.background = getRGB();
-    el5.style.background = getRGB();
-    el6.style.background = "rgb(255,255,255)";
-    el7.style.background = getRGB();
+    el1.style.background = white;
+    el2.style.background = rgb;
+    el3.style.background = white;
+    el4.style.background = white;
+    el5.style.background = white;
+    el6.style.background = rgb;
+    el7.style.background = white;
   } else if (num == 4) {
-    el1.style.background = getRGB();
-    el2.style.background = "rgb(255,255,255)";
-    el3.style.background = getRGB();
-    el4.style.background = "rgb(255,255,255)";
-    el5.style.background = getRGB();
-    el6.style.background = "rgb(255,255,255)";
-    el7.style.background = getRGB();
+    el1.style.background = white;
+    el2.style.background = rgb;
+    el3.style.background = white;
+    el4.style.background = rgb;
+    el5.style.background = white;
+    el6.style.background = rgb;
+    el7.style.background = white;
   } else if (num == 3) {
-    el1.style.background = getRGB();
-    el2.style.background = "rgb(255,255,255)";
-    el3.style.background = "rgb(255,255,255)";
-    el4.style.background = getRGB();
-    el5.style.background = "rgb(255,255,255)";
-    el6.style.background = "rgb(255,255,255)";
-    el7.style.background = getRGB();
+    el1.style.background = white;
+    el2.style.background = rgb;
+    el3.style.background = rgb;
+    el4.style.background = white;
+    el5.style.background = rgb;
+    el6.style.background = rgb;
+    el7.style.background = white;
   } else if (num == 2) {
-    el1.style.background = getRGB();
-    el2.style.background = "rgb(255,255,255)";
-    el3.style.background = "rgb(255,255,255)";
-    el4.style.background = "rgb(255,255,255)";
-    el5.style.background = "rgb(255,255,255)";
-    el6.style.background = "rgb(255,255,255)";
-    el7.style.background = getRGB();
+    el1.style.background = white;
+    el2.style.background = rgb;
+    el3.style.background = rgb;
+    el4.style.background = rgb;
+    el5.style.background = rgb;
+    el6.style.background = rgb;
+    el7.style.background = white;
   } else if (num == 1) {
-    el1.style.background = "rgb(255,255,255)";
-    el2.style.background = "rgb(255,255,255)";
-    el3.style.background = "rgb(255,255,255)";
-    el4.style.background = getRGB();
-    el5.style.background = "rgb(255,255,255)";
-    el6.style.background = "rgb(255,255,255)";
-    el7.style.background = "rgb(255,255,255)";
+    el1.style.background = rgb;
+    el2.style.background = rgb;
+    el3.style.background = rgb;
+    el4.style.background = white;
+    el5.style.background = rgb;
+    el6.style.background = rgb;
+    el7.style.background = rgb;
   }
   
 }
