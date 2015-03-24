@@ -35,17 +35,10 @@ body {
 }
 
 @media screen and (max-width: 568px) {
-  
-  body {
-    padding: 20px;
-  }
-  
-  .outer {
-    margin-top: 24px;
-  }
-  
+    
   .inner{
-    width: 264px;
+    width: 248px;
+    height: 248px;
     border-radius: 24px;
     padding: 12px;
   }
