@@ -13,15 +13,15 @@ function rollDice() {
   var all = [el1,el2,el3,el4,el5,el6,el7];
   var die = document.getElementById("dieBG");
   var bg = getColor();
-  var white = "#fff";
+  var white = "rgb(255,255,255)";
 
   // set background of die
   die.style.background = bg;
   
   // set all numbers to white
-  for (var i; i < all.length; i++) {
+  for (var i=0; i < all.length; i++) {
     all[i].style.background = white;
-  }
+  };
 
   // hide unneeded numbers by setting the to the same bg color as the background
   if (num === 6) {
@@ -66,7 +66,7 @@ function getColor() {
   var randColor = Math.floor((Math.random() * colors.length))
   
   var color = colors[randColor];
-  
+
   return color;
 }
 
