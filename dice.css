@@ -2,17 +2,20 @@ body {
   background: url('assets/images/frozen.jpg');
   background-position: bottom left;
   background-size: cover;
-}
-
-.outer {
-  width: 100%;
-  margin-top: 70px;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 .inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   border-radius: 100px;
   width: 610px;
-  margin: 0 auto;
+  height: 610px;
+  margin: auto;
   padding: 25px;
   background: #fff;
 }
