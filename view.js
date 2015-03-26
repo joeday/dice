@@ -1,8 +1,13 @@
+// construct the current color var
+// empty at first
+var currentColor;
 
 function rollDice() {
-
+  
+  // the random number the die displays
   var num = Math.floor((Math.random() * 6) +1);
   
+  // create variables for die element IDs, then put them in an array
   var el1 = document.getElementById("one");
   var el2 = document.getElementById("two");
   var el3 = document.getElementById("three");
@@ -11,16 +16,22 @@ function rollDice() {
   var el6 = document.getElementById("six");
   var el7 = document.getElementById("seven");
   var all = [el1,el2,el3,el4,el5,el6,el7];
+  
+  // the background of the die itself
   var die = document.getElementById("dieBG");
-  var bg = getColor();
-  var white = "rgb(255,255,255)";
-
-  // set background of die
+  
+  // get the existing color if it exists to prevent setting the next color to the same
+  var prevColor = currentColor ? currentColor : (currentColor = "rgb(126,78,47)");
+  
+  // set the color of the background
+  var bg = getColor(prevColor);
+  
+  // change the background color
   die.style.background = bg;
   
   // set all numbers to white
   for (var i=0; i < all.length; i++) {
-    all[i].style.background = white;
+    all[i].style.background = "rgb(255,255,255)";
   };
 
   // hide unneeded numbers by setting the to the same bg color as the background
@@ -55,26 +66,49 @@ function rollDice() {
   
 }
 
-function getColor() {
-  // based on Frozen Anna color scheme from color.adobe.com https://color.adobe.com/Frozen-Anna-color-theme-5544861/edit/?copy=true
+function getColor(previous) {
+  // based on Frozen color schemes like this one from color.adobe.com https://color.adobe.com/Frozen-Anna-color-theme-5544861/edit/?copy=true
+  
+  // collect the previous color so we can use it to remove it from the array below
+  var prev = previous;
+  
+  // construct the colors array
   var c1 = "rgb(165,39,131)";
   var c2 = "rgb(39,90,139)";
   var c3 = "rgb(4,157,191)";
-  var c4 = "rgb(215,129,52)";
+  var c4 = "rgb(38,249,253)";
   var c5 = "rgb(241,179,154)";
-  var colors = [c1,c2,c3,c4,c5];
+  var c6 = "rgb(188,120,121)";
+  var c7 = "rgb(255,43,43)";
+  var c8 = "rgb(233,105,44)";
+  var c9 = "rgb(126,78,47)";
+  var colors = [c1,c2,c3,c4,c5,c6,c7,c8,c9];
+  
+  // remove previus color from array to ensure each role of die gets new color
+  for (var i = 0; i < colors.length; i++) {
+    if (colors[i] === prev) {
+      colors.splice(i, 1);
+    }
+  }
+  
+  // get a random number based on contents of colors array
   var randColor = Math.floor((Math.random() * colors.length))
   
+  // set the color to return
   var color = colors[randColor];
+  
+  // set the current color to the new color we just selected
+  currentColor = color;
 
   return color;
 }
 
-
+// press space bar to roll the die
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
       rollDice();
     }
 }
 
+// initial die roll
 rollDice();
