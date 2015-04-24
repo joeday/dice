@@ -11,16 +11,25 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
 }
 
-h1 {
-  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+h1,
+.page-title {
   font-size: 2em;
 }
 
 h3 {
-  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
   font-size: 3em;
+}
+
+nav {
+  background: rgba(138,133,135, .9);
+  color: white;
+}
+
+.small {
+  font-size: .8em;
 }
 
 .outer {
@@ -39,9 +48,9 @@ h3 {
 }
 
 .die {
-  width: 29vw;
-  height: 29vw;
-  border-radius: 29vw;
+  width: 28vw;
+  height: 28vw;
+  border-radius: 28vw;
   border: none;
   margin: 0px;
   background: #fff;
@@ -49,6 +58,7 @@ h3 {
 }
 
 @media screen and (orientation: portrait) {
+  
   .outer {
     bottom: 0;
     left: 0;
@@ -75,15 +85,15 @@ h3 {
   }
   
   .die {
-    width: 29vw;
-    height: 29vw;
-    border-radius: 29vw;
+    width: 28vw;
+    height: 28vw;
+    border-radius: 28vw;
   }
 
 }
 
 @media screen and (orientation: landscape) {
-    
+  
   .header {
     width: calc(100% - 100vh);
     height: 100vh;
@@ -110,9 +120,9 @@ h3 {
   }
   
   .die {
-    width: 29vh;
-    height: 29vh;
-    border-radius: 29vh;
+    width: 28vh;
+    height: 28vh;
+    border-radius: 28vh;
   }
   
 }

@@ -27,10 +27,27 @@
     <link href="assets/images/apple-touch-startup-image-2048x1496.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
     
     <link rel="stylesheet" href="assets/stylesheets/dice.css">
+    <link rel="stylesheet" href="assets/stylesheets/responsive-nav.css">
     <script type='application/javascript' src='node_modules/fastclick/lib/fastclick.js'></script>
+    <script type='application/javascript' src='assets/javascript/responsive-nav.js'></script>
     
 </head>
 <body>
+  <nav role="navigation" id="foo" class="nav-collapse">
+    <ul>
+      <li class="active">
+        <div class="page-title">Minimalist Dice</div>
+        <p>Because you wanted a minimalist die you could use anywhere.</p>
+        <p>For the best, most native app-like experience, open in Safari and add to your homescreen.</p>
+      </li>
+      <li>
+        <h4>How to use</h4>
+        <p>On mobile &amp; tablet: touch the die.</p>
+        <p>On desktop: press spacebar or click the die.</p>
+      </li>
+      <li><p class="small">Made with love by Joe Day in Seattle</p></li>
+    </ul>
+  </nav>
   <div class="scroll">
     <header class="header">
       <div class="header-inner">
@@ -64,5 +81,8 @@
   
   <script type='application/javascript' src="assets/javascript/main.js"></script>  
   <script type='application/javascript' src="assets/javascript/prevent_overscroll.js"></script>
+  <script>
+    var nav = responsiveNav(".nav-collapse");
+  </script>
   
 </body>
