@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Brynn &amp; Chloe Games!</title>
+    <title>minimalist dice</title>
     <meta http-equiv="x-ua-compatible" content="id=edge;chrome=1">
     <!-- <meta name="viewport" content="width=device-width,initial-scale=1"> -->
     <meta content="width=device-width, initial-scale=1, user-scalable=0" name="viewport">
@@ -11,21 +11,32 @@
     <link rel="stylesheet" href="dice.css">
 </head>
 <body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>dice</h1>
   
-  <div id="dieBG" class="inner" onclick="rollDice()">
+      <div class="rollup">
+        <h3 id="sum">1<h3>
+      </div>
+    </div>
+  </header>
+  
+  <div id="dieBG" class="outer" onclick="rollDice()">
     <div class="cover"></div>
-    <div class="row">
-      <div id="one" class="die"></div>
-      <div id="two" class="die"></div>
-      <div id="three" class="die"></div>
-    </div>
-    <div class="row">
-      <div id="four" class="die"></div>
-    </div>
-    <div class="row">
-      <div id="five" class="die"></div>
-      <div id="six" class="die"></div>
-      <div id="seven" class="die"></div>
+    <div class="inner">
+      <div class="row">
+        <div id="one" class="die"></div>
+        <div id="two" class="die"></div>
+        <div id="three" class="die"></div>
+      </div>
+      <div class="row">
+        <div id="four" class="die"></div>
+      </div>
+      <div class="row">
+        <div id="five" class="die"></div>
+        <div id="six" class="die"></div>
+        <div id="seven" class="die"></div>
+      </div>
     </div>
   </div>
   

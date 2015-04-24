@@ -17,11 +17,14 @@ function rollDice() {
   var el7 = document.getElementById("seven");
   var all = [el1,el2,el3,el4,el5,el6,el7];
   
+  // the sum text
+  var txt = document.getElementById("sum");
+  
   // the background of the die itself
   var die = document.getElementById("dieBG");
   
   // get the existing color if it exists to prevent setting the next color to the same
-  var prevColor = currentColor ? currentColor : (currentColor = "rgb(126,78,47)");
+  var prevColor = currentColor ? currentColor : (currentColor = "rgb(125,161,191)");
   
   // set the color of the background
   var bg = getColor(prevColor);
@@ -64,25 +67,31 @@ function rollDice() {
     el7.style.background = bg;
   }
   
+  txt.innerHTML = num;
+  
 }
 
 function getColor(previous) {
-  // based on Frozen color schemes like this one from color.adobe.com https://color.adobe.com/Frozen-Anna-color-theme-5544861/edit/?copy=true
+  // based on Pantone spring 2015 color pallette
+  // http://iwork3.us/2014/09/16/pantone-2015-spring-fashion-report/
   
   // collect the previous color so we can use it to remove it from the array below
   var prev = previous;
   
   // construct the colors array
-  var c1 = "rgb(165,39,131)";
-  var c2 = "rgb(39,90,139)";
-  var c3 = "rgb(4,157,191)";
-  var c4 = "rgb(38,249,253)";
-  var c5 = "rgb(241,179,154)";
-  var c6 = "rgb(188,120,121)";
-  var c7 = "rgb(255,43,43)";
-  var c8 = "rgb(233,105,44)";
-  var c9 = "rgb(126,78,47)";
-  var colors = [c1,c2,c3,c4,c5,c6,c7,c8,c9];
+  var c1 = "rgb(125,161,191)";
+  var c2 = "rgb(28,78,137)";
+  var c3 = "rgb(78,110,56)";
+  var c4 = "rgb(127,128,64)";
+  var c5 = "rgb(198,203,204)";
+  var c6 = "rgb(138,133,135)";
+  var c7 = "rgb(210,178,154)";
+  var c8 = "rgb(199,141,107)";
+  var c9 = "rgb(149,82,81)";
+  var c10 = "rgb(179,143,177)";
+  
+  // simplifying the color pallette
+  var colors = [c1,c5,c6];
   
   // remove previus color from array to ensure each role of die gets new color
   for (var i = 0; i < colors.length; i++) {
