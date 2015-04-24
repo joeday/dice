@@ -48,13 +48,14 @@ nav {
 }
 
 .die {
-  width: 28vw;
-  height: 28vw;
-  border-radius: 28vw;
   border: none;
-  margin: 0px;
   background: #fff;
-  display: inline-block;
+  float: left;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
 }
 
 @media screen and (orientation: portrait) {
@@ -88,6 +89,7 @@ nav {
     width: 28vw;
     height: 28vw;
     border-radius: 28vw;
+    margin: 1vw;
   }
 
 }
@@ -123,6 +125,7 @@ nav {
     width: 28vh;
     height: 28vh;
     border-radius: 28vh;
+    margin: 1vw;
   }
   
 }

@@ -22,7 +22,9 @@ function rollDice() {
   var el5 = document.getElementById("five");
   var el6 = document.getElementById("six");
   var el7 = document.getElementById("seven");
-  var all = [el1,el2,el3,el4,el5,el6,el7];
+  var el8 = document.getElementById("eight");
+  var el9 = document.getElementById("nine");
+  var all = [el1,el2,el3,el4,el5,el6,el7,el8,el9];
   
   // the sum text
   var txt = document.getElementById("sum");
@@ -43,35 +45,39 @@ function rollDice() {
   for (var i=0; i < all.length; i++) {
     all[i].style.background = "rgb(255,255,255)";
   };
-
+  
+  // hide the spacers
+  el4.style.background = bg;
+  el6.style.background = bg;
+  
   // hide unneeded numbers by setting the to the same bg color as the background
   if (num === 6) {
-    el4.style.background = bg;
+    el5.style.background = bg;
   } else if (num == 5) {
     el2.style.background = bg;
-    el6.style.background = bg;
+    el8.style.background = bg;
   } else if (num == 4) {
     el2.style.background = bg;
-    el4.style.background = bg;
-    el6.style.background = bg;
+    el5.style.background = bg;
+    el8.style.background = bg;
   } else if (num == 3) {
     el2.style.background = bg;
     el3.style.background = bg;
-    el5.style.background = bg;
-    el6.style.background = bg;
+    el7.style.background = bg;
+    el8.style.background = bg;
   } else if (num == 2) {
     el2.style.background = bg;
     el3.style.background = bg;
-    el4.style.background = bg;
     el5.style.background = bg;
-    el6.style.background = bg;
+    el7.style.background = bg;
+    el8.style.background = bg;
   } else if (num == 1) {
     el1.style.background = bg;
     el2.style.background = bg;
     el3.style.background = bg;
-    el5.style.background = bg;
-    el6.style.background = bg;
     el7.style.background = bg;
+    el8.style.background = bg;
+    el9.style.background = bg;
   }
   
   txt.innerHTML = num;
