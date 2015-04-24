@@ -1,3 +1,10 @@
+// Instantiate Fastclick
+if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+}
+
 // construct the current color var
 // empty at first
 var currentColor;
