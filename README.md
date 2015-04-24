@@ -1,5 +1,5 @@
-# Dice
-A simple 6-sided die to use for games. I built this for my girls (hence the multi-colors!) so they could play their Frozen pop-up game easier. 
+# Minimalist Dice
+A simple 6-sided die to use for games. I built this when my daughters Frozen pop-up game stopped popping. 
 
 ## How To Role the Die
 First, go to http://joeday.github.io/dice on any browser. Then...
