@@ -9,8 +9,11 @@ if ('addEventListener' in document) {
 // empty at first
 var currentColor;
 
+function init() {
+  rollDice();
+};
+
 function rollDice() {
-  
   // the random number the die displays
   var num = Math.floor((Math.random() * 6) +1);
   
@@ -40,48 +43,40 @@ function rollDice() {
   
   // change the background color
   die.style.background = bg;
+  // $(die).animate({backgroundColor: bg}, 500);
   
-  // set all numbers to white
+  // set all numbers to bg
   for (var i=0; i < all.length; i++) {
-    all[i].style.background = "rgb(255,255,255)";
+    all[i].style.background = bg;
   };
   
   // hide the spacers
   el4.style.background = bg;
   el6.style.background = bg;
   
-  // hide unneeded numbers by setting the to the same bg color as the background
+  // show desired numbers by getting appropriate die locations and animating them to white
   if (num === 6) {
-    el5.style.background = bg;
+    animateDice([el1,el2,el3,el7,el8,el9], "rgb(255,255,255)");
   } else if (num == 5) {
-    el2.style.background = bg;
-    el8.style.background = bg;
+    animateDice([el1,el3,el5,el7,el9], "rgb(255,255,255)");
   } else if (num == 4) {
-    el2.style.background = bg;
-    el5.style.background = bg;
-    el8.style.background = bg;
+    animateDice([el1,el3,el7,el9], "rgb(255,255,255)");
   } else if (num == 3) {
-    el2.style.background = bg;
-    el3.style.background = bg;
-    el7.style.background = bg;
-    el8.style.background = bg;
+    animateDice([el1,el5,el9], "rgb(255,255,255)");
   } else if (num == 2) {
-    el2.style.background = bg;
-    el3.style.background = bg;
-    el5.style.background = bg;
-    el7.style.background = bg;
-    el8.style.background = bg;
+    animateDice([el1,el9], "rgb(255,255,255)");
   } else if (num == 1) {
-    el1.style.background = bg;
-    el2.style.background = bg;
-    el3.style.background = bg;
-    el7.style.background = bg;
-    el8.style.background = bg;
-    el9.style.background = bg;
+    animateDice([el5], "rgb(255,255,255)");
   }
   
+  // set the text to the number
   txt.innerHTML = num;
   
+}
+
+// receive an array of elements and color to animate to the desired color
+function animateDice(ary, color) {
+  $(ary).animate({backgroundColor: color}, 300);
 }
 
 function getColor(previous) {
@@ -133,4 +128,4 @@ document.body.onkeyup = function(e){
 }
 
 // initial die roll
-rollDice();
+window.onload = init();

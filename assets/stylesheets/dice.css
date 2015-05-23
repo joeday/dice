@@ -26,6 +26,7 @@ h3 {
 nav {
   background: rgba(138,133,135, .9);
   color: white;
+  display: none;
 }
 
 .small {
@@ -59,7 +60,6 @@ nav {
 
 .die {
   border: none;
-  background: #fff;
   flex-grow: 1;
 }
 
@@ -95,6 +95,7 @@ nav {
     height: 28vw;
     border-radius: 28vw;
     margin: 1vw;
+    display: none;
   }
 
 }
