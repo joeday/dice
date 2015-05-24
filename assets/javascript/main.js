@@ -43,7 +43,6 @@ function rollDice() {
   
   // change the background color
   die.style.background = bg;
-  // $(die).animate({backgroundColor: bg}, 500);
   
   // set all numbers to bg
   for (var i=0; i < all.length; i++) {
@@ -76,7 +75,13 @@ function rollDice() {
 
 // receive an array of elements and color to animate to the desired color
 function animateDice(ary, color) {
-  $(ary).animate({backgroundColor: color}, 300);
+  
+  for (var i=0; i < ary.length; i++) {
+    ary[i].style.background = color;
+  };
+  
+  // ary.style.background = color;
+  // $(ary).animate({backgroundColor: color}, 300);
 }
 
 function getColor(previous) {
