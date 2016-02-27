@@ -11,12 +11,18 @@ var currentColor;
 
 function init() {
   rollDice();
+
+  // New stuff!
+  // Instantiate however many dice are needed
+  var die1 = new SingleDie(currentColor, 6);
+  var die2 = new SingleDie(currentColor, 6);
+
 };
 
 function rollDice() {
   // the random number the die displays
   var num = Math.floor((Math.random() * 6) +1);
-  
+
   // create variables for die element IDs, then put them in an array
   var el1 = document.getElementById("one");
   var el2 = document.getElementById("two");
@@ -28,31 +34,31 @@ function rollDice() {
   var el8 = document.getElementById("eight");
   var el9 = document.getElementById("nine");
   var all = [el1,el2,el3,el4,el5,el6,el7,el8,el9];
-  
+
   // the sum text
   var txt = document.getElementById("sum");
-  
+
   // the background of the die itself
   var die = document.getElementById("dieBG");
-  
+
   // get the existing color if it exists to prevent setting the next color to the same
   var prevColor = currentColor ? currentColor : (currentColor = "rgb(125,161,191)");
-  
+
   // set the color of the background
   var bg = getColor(prevColor);
-  
+
   // change the background color
   die.style.background = bg;
-  
-  // set all numbers to bg
+
+  // set all numbers to bg, essentially turning them all off so we can turn only the correct ones back on
   for (var i=0; i < all.length; i++) {
     all[i].style.background = bg;
   };
-  
-  // hide the spacers
+
+  // NEED TO MAKE THIS DYNAMIC hide the spacers on a six sided die 
   el4.style.background = bg;
   el6.style.background = bg;
-  
+
   // show desired numbers by getting appropriate die locations and animating them to white
   if (num === 6) {
     animateDice([el1,el2,el3,el7,el8,el9], "rgb(255,255,255)");
@@ -67,19 +73,19 @@ function rollDice() {
   } else if (num == 1) {
     animateDice([el5], "rgb(255,255,255)");
   }
-  
+
   // set the text to the number
   txt.innerHTML = num;
-  
+
 }
 
 // receive an array of elements and color to animate to the desired color
 function animateDice(ary, color) {
-  
+
   for (var i=0; i < ary.length; i++) {
     ary[i].style.background = color;
   };
-  
+
   // ary.style.background = color;
   // $(ary).animate({backgroundColor: color}, 300);
 }
@@ -87,10 +93,10 @@ function animateDice(ary, color) {
 function getColor(previous) {
   // based on Pantone spring 2015 color pallette
   // http://iwork3.us/2014/09/16/pantone-2015-spring-fashion-report/
-  
+
   // collect the previous color so we can use it to remove it from the array below
   var prev = previous;
-  
+
   // construct the colors array
   var c1 = "rgb(125,161,191)";
   var c2 = "rgb(28,78,137)";
@@ -102,23 +108,23 @@ function getColor(previous) {
   var c8 = "rgb(199,141,107)";
   var c9 = "rgb(149,82,81)";
   var c10 = "rgb(179,143,177)";
-  
+
   // simplifying the color pallette
   var colors = [c1,c5,c6];
-  
+
   // remove previus color from array to ensure each role of die gets new color
   for (var i = 0; i < colors.length; i++) {
     if (colors[i] === prev) {
       colors.splice(i, 1);
     }
   }
-  
+
   // get a random number based on contents of colors array
   var randColor = Math.floor((Math.random() * colors.length))
-  
+
   // set the color to return
   var color = colors[randColor];
-  
+
   // set the current color to the new color we just selected
   currentColor = color;
 
