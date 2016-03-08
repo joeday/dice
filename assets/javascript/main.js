@@ -15,8 +15,6 @@ function init() {
   // New stuff!
   // Instantiate however many dice are needed
   var die1 = new SingleDie(currentColor, 6);
-  var die2 = new SingleDie(currentColor, 6);
-
 };
 
 function rollDice() {
@@ -42,37 +40,37 @@ function rollDice() {
   var die = document.getElementById("dieBG");
 
   // get the existing color if it exists to prevent setting the next color to the same
-  var prevColor = currentColor ? currentColor : (currentColor = "rgb(125,161,191)");
-
-  // set the color of the background
-  var bg = getColor(prevColor);
-
-  // change the background color
-  die.style.background = bg;
-
-  // set all numbers to bg, essentially turning them all off so we can turn only the correct ones back on
-  for (var i=0; i < all.length; i++) {
-    all[i].style.background = bg;
-  };
-
-  // NEED TO MAKE THIS DYNAMIC hide the spacers on a six sided die 
-  el4.style.background = bg;
-  el6.style.background = bg;
+  // var prevColor = currentColor ? currentColor : (currentColor = "rgb(125,161,191)");
+  //
+  // // set the color of the background
+  // var bg = getColor(prevColor);
+  //
+  // // change the background color
+  // die.style.background = bg;
+  //
+  // // set all numbers to bg, essentially turning them all off so we can turn only the correct ones back on
+  // for (var i=0; i < all.length; i++) {
+  //   all[i].style.background = bg;
+  // };
+  //
+  // // NEED TO MAKE THIS DYNAMIC hide the spacers on a six sided die
+  // el4.style.background = bg;
+  // el6.style.background = bg;
 
   // show desired numbers by getting appropriate die locations and animating them to white
-  if (num === 6) {
-    animateDice([el1,el2,el3,el7,el8,el9], "rgb(255,255,255)");
-  } else if (num == 5) {
-    animateDice([el1,el3,el5,el7,el9], "rgb(255,255,255)");
-  } else if (num == 4) {
-    animateDice([el1,el3,el7,el9], "rgb(255,255,255)");
-  } else if (num == 3) {
-    animateDice([el1,el5,el9], "rgb(255,255,255)");
-  } else if (num == 2) {
-    animateDice([el1,el9], "rgb(255,255,255)");
-  } else if (num == 1) {
-    animateDice([el5], "rgb(255,255,255)");
-  }
+  // if (num === 6) {
+  //   animateDice([el1,el2,el3,el7,el8,el9], "rgb(255,255,255)");
+  // } else if (num == 5) {
+  //   animateDice([el1,el3,el5,el7,el9], "rgb(255,255,255)");
+  // } else if (num == 4) {
+  //   animateDice([el1,el3,el7,el9], "rgb(255,255,255)");
+  // } else if (num == 3) {
+  //   animateDice([el1,el5,el9], "rgb(255,255,255)");
+  // } else if (num == 2) {
+  //   animateDice([el1,el9], "rgb(255,255,255)");
+  // } else if (num == 1) {
+  //   animateDice([el5], "rgb(255,255,255)");
+  // }
 
   // set the text to the number
   txt.innerHTML = num;
