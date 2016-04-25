@@ -33,54 +33,28 @@
 
 </head>
 <body>
-  <nav role="navigation" id="foo" class="nav-collapse">
-    <ul>
-      <li class="active">
-        <div class="page-title">Minimalist Dice</div>
-        <p>Because you wanted a minimalist die you could use anywhere.</p>
-        <p>For the best, most native app-like experience, open in Safari and add to your homescreen.</p>
-      </li>
-      <li>
-        <h4>How to use</h4>
-        <p>On mobile &amp; tablet: touch the die.</p>
-        <p>On desktop: press spacebar or click the die.</p>
-      </li>
-      <li><p class="small">Made with love by Joe Day in Seattle</p></li>
-    </ul>
-  </nav>
-  <div class="scroll">
-    <header class="header">
-      <div class="header-inner">
-        <h1>dice</h1>
 
-        <div class="rollup">
-          <h3 id="sum">1<h3>
+    <div class="scroll">
+        <header class="header">
+            <div class="header-inner">
+                <h1>dice</h1>
+
+                <div class="rollup">
+                    <h3 id="sum">1<h3>
+                </div>
+          </div>
+        </header>
+
+        <div id="dieBG" class="outer" onclick="rollDice()">
+            <div class="cover"></div>
+            <div class="inner">
+
+            </div>
         </div>
-      </div>
-    </header>
-
-    <div id="dieBG" class="outer" onclick="rollDice()">
-      <div class="cover"></div>
-      <div class="inner">
-        <div id="one" class="die"></div>
-        <div id="two" class="die"></div>
-        <div id="three" class="die"></div>
-        <div id="four" class="die"></div>
-        <div id="five" class="die"></div>
-        <div id="six" class="die"></div>
-        <div id="seven" class="die"></div>
-        <div id="eight" class="die"></div>
-        <div id="nine" class="die"></div>
-      </div>
     </div>
-  </div>
 
-  <script type='application/javascript' src="assets/javascript/die.js"></script>  
-  <script type='application/javascript' src="assets/javascript/main.js"></script>
-  <script type='application/javascript' src="assets/javascript/prevent_overscroll.js"></script>
-
-  <script>
-    var nav = responsiveNav(".nav-collapse");
-  </script>
+    <script type='application/javascript' src="assets/javascript/die.js"></script>
+    <!-- <script type='application/javascript' src="assets/javascript/main.js"></script> -->
+    <script type='application/javascript' src="assets/javascript/prevent_overscroll.js"></script>
 
 </body>
