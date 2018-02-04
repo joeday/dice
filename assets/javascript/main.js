@@ -92,21 +92,18 @@ function getColor(previous) {
   var prev = previous;
   
   // construct the colors array
-  var c1 = "rgb(125,161,191)";
-  var c2 = "rgb(28,78,137)";
-  var c3 = "rgb(78,110,56)";
-  var c4 = "rgb(127,128,64)";
-  var c5 = "rgb(198,203,204)";
-  var c6 = "rgb(138,133,135)";
-  var c7 = "rgb(210,178,154)";
-  var c8 = "rgb(199,141,107)";
-  var c9 = "rgb(149,82,81)";
-  var c10 = "rgb(179,143,177)";
+  var c1 = "rgb(17,128,174)";
+  var c2 = "rgb(109,91,151)";
+  var c3 = "rgb(252,178,57)";
+  var c4 = "rgb(215,64,97)";
+  var c5 = "rgb(243,122,41)";
+  var c6 = "rgb(182,107,163)";
+  var c7 = "rgb(52,90,153)";
   
   // simplifying the color pallette
-  var colors = [c1,c5,c6];
+  var colors = [c1,c2,c3,c4,c5,c6,c7];
   
-  // remove previus color from array to ensure each role of die gets new color
+  // remove previous color from array to ensure each role of die gets new color
   for (var i = 0; i < colors.length; i++) {
     if (colors[i] === prev) {
       colors.splice(i, 1);
